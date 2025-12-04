@@ -1,0 +1,115 @@
+/* General Page Styles */
+body {
+    background-color: #121212; /* Standard dark background */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif; /* Headings font */
+}
+
+section {
+    padding: 80px 0; /* consistent spacing */
+}
+
+/* Navbar Customization */
+.navbar {
+    background-color: #000000;
+    border-bottom: 1px solid #333;
+    transition: padding 0.3s;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #b0b0b0 !important; /* Light gray text */
+    transition: color 0.3s ease;
+}
+
+/* Active state for ScrollSpy */
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #000000;
+    padding: 120px 0;
+    border-bottom: 1px solid #333;
+}
+
+.btn-outline-white {
+    border: 2px solid white;
+    color: white;
+    border-radius: 0; /* Makes buttons square/modern */
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Project Cards */
+.card {
+    background-color: #1e1e1e; /* Slightly lighter than body */
+    border: 1px solid #333;
+    color: white;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Moves up slightly on hover */
+    border-color: #ffffff;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+/* Skills Badges */
+.badge-skill {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+    font-weight: 400;
+    padding: 10px 15px;
+    margin: 5px;
+}
+
+/* Contact Form */
+.form-control {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 0;
+    padding: 15px;
+}
+
+.form-control:focus {
+    background-color: #252525;
+    border-color: white;
+    color: white;
+    box-shadow: none; /* Removes the default blue glow */
+}
+
+/* Placeholder Styling - Added for readability */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* White with slight transparency */
+    opacity: 1; /* Firefox fix */
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    padding: 40px 0;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #666;
+}

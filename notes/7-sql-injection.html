@@ -1,0 +1,41 @@
+<h3>What is SQL Injection?</h3>
+<p>Happens when software builds SQL queries using untrusted user input without cleaning it. Attackers can insert SQL code to manipulate the database.</p>
+
+<h4>Quick SQL Refresher</h4>
+<ul>
+    <li>Retrieve data (<code>SELECT</code>)</li>
+    <li>Insert data (<code>INSERT</code>)</li>
+    <li>Update data (<code>UPDATE</code>)</li>
+    <li>Delete data (<code>DELETE</code>)</li>
+</ul>
+
+<hr class="border-secondary">
+
+<h4>How injection works</h4>
+<p>User input is combined with SQL commands directly.</p>
+
+<div class="bg-black p-3 rounded mb-3 font-monospace">
+    <span class="text-secondary">// Intended:</span><br>
+    SELECT * FROM users WHERE username = 'USER' AND password = 'PASS';<br><br>
+    <span class="text-secondary">// Malicious input: ' OR '1'='1</span><br>
+    SELECT * FROM users WHERE username = '' OR '1'='1' AND password = 'PASS';
+</div>
+<p>This result always evaluates true, potentially logging in the attacker.</p>
+
+<h4>Why it’s dangerous</h4>
+<ul>
+    <li>Data theft (credentials)</li>
+    <li>Data loss or corruption (delete db)</li>
+    <li>Denial of service</li>
+    <li>Full system compromise</li>
+</ul>
+
+<hr class="border-secondary">
+
+<h4>How to prevent it</h4>
+<ol>
+    <li><strong>Prepared Statements / Parameterized Queries</strong>: SQL structure compiled first, then input added as data, not code.</li>
+    <li><strong>Input validation</strong>: Check type, length, format, allowed characters.</li>
+    <li><strong>Escaping input</strong>: Add slashes before special symbols (less secure).</li>
+    <li><strong>Least Privilege</strong>: Give database accounts minimum access needed.</li>
+</ol>

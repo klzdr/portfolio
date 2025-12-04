@@ -1,0 +1,38 @@
+<h3>CWE-79: Cross-Site Scripting (XSS)</h3>
+<p>XSS allows attackers to inject scripts into web apps, affecting users. It bypasses the browser’s same-origin policy to run malicious scripts.</p>
+
+<hr class="border-secondary">
+
+<h4>How XSS works</h4>
+<ol>
+    <li>Attacker injects malicious JavaScript into a page.</li>
+    <li>Victim’s browser executes it.</li>
+    <li>Example: URL parameter updates a page without proper input handling.</li>
+</ol>
+
+<h4>Types of XSS</h4>
+<ul>
+    <li><strong>Reflected (Non-persistent)</strong>: Script is in the page response (not stored). Only affects users who click a crafted link.</li>
+    <li><strong>Stored (Persistent)</strong>: Script stored on server (database, comments). Affects all users who view the page.</li>
+    <li><strong>DOM-Based</strong>: Client-side only. Attacker changes the DOM via JavaScript. Payload may never touch the server.</li>
+    <li><strong>Universal XSS (uXSS)</strong>: Exploits browser or extension flaws.</li>
+    <li><strong>Self-XSS</strong>: Social engineering trick to get users to run scripts in their own console.</li>
+</ul>
+
+<hr class="border-secondary">
+
+<h4>Consequences</h4>
+<ul>
+    <li>Stealing cookies or sessions (Account Takeover)</li>
+    <li>Data theft</li>
+    <li>Website defacement</li>
+    <li>Malware delivery</li>
+</ul>
+
+<h4>Prevention</h4>
+<ul>
+    <li>Validate and Sanitize all input.</li>
+    <li>Encode output depending on context.</li>
+    <li>Use <strong>HTTPOnly</strong> cookies.</li>
+    <li>Implement <strong>Content Security Policy (CSP)</strong>.</li>
+</ul>

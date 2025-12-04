@@ -1,0 +1,38 @@
+<h3>CWE-35: Path Traversal</h3>
+<p>A vulnerability that lets attackers access files or directories outside intended areas.</p>
+
+<hr class="border-secondary">
+
+<h4>How it works</h4>
+<p>Attackers use dot-dot-slash notation to move up directory trees.</p>
+<div class="bg-black p-2 rounded mb-2 font-monospace">
+    ../ (Unix) OR ..\ (Windows)
+</div>
+
+<h4>Attack Techniques</h4>
+<ul>
+    <li>Simple: <code>../../etc/passwd</code></li>
+    <li>Percent encoding: <code>%2e%2e%2f</code></li>
+    <li>Double encoding: <code>%252e%252e%252f</code></li>
+    <li>NULL bytes: <code>filename.php%00.jpg</code></li>
+</ul>
+
+<hr class="border-secondary">
+
+<h4>What can happen</h4>
+<ul>
+    <li>Read sensitive files (like <code>/etc/passwd</code>)</li>
+    <li>Modify or delete important files</li>
+    <li>Gather system info for further attacks</li>
+</ul>
+
+<h4>Prevention</h4>
+<ul>
+    <li>Validate user input with allowlists.</li>
+    <li>Avoid using raw user input in file paths.</li>
+    <li>Use built-in path normalization functions.</li>
+    <li>Apply least privilege access controls.</li>
+</ul>
+
+<h4>Testing Tools</h4>
+<p>Burp Suite, OWASP ZAP, Nikto, DotDotPwn, Metasploit, DirBuster.</p>

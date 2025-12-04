@@ -1,0 +1,48 @@
+<h3>What is it?</h3>
+<p>A command injection attack happens when an attacker runs commands on a system through a vulnerable application.</p>
+<p>The app takes user input (forms, cookies, headers, etc.) and passes it to the system shell without checking it properly. If successful, the attacker can control the machine.</p>
+
+<div class="alert alert-danger">
+    <strong>Why it’s dangerous:</strong> Attackers can run any command they want on the system. If the app runs with high privileges (like root), the attacker’s commands do too.
+</div>
+
+<h4>How it works</h4>
+<p>External input from users is included in commands. Special characters like <code>;</code> <code>&</code> <code>|</code> <code>||</code> can separate commands in the shell. If these are not filtered, the shell executes extra commands.</p>
+
+<hr class="border-secondary">
+
+<h4>Types of OS Command Injection</h4>
+
+<h5>1. Argument Injection</h5>
+<p>Input is used as an argument for a program.</p>
+<div class="bg-black p-2 rounded mb-2 font-monospace">
+    Example: system(”nslookup [HOSTNAME]”)
+</div>
+<p>Attackers can’t stop nslookup from running, but can add commands after it.</p>
+
+<h5>2. Command Name/Path Injection</h5>
+<p>Input fully decides which command or program runs.</p>
+<div class="bg-black p-2 rounded mb-2 font-monospace">
+    Example: exec([COMMAND])
+</div>
+<p>If the attacker controls [COMMAND], they can run anything.</p>
+
+<hr class="border-secondary">
+
+<h4>How to protect against it</h4>
+<ul>
+    <li><strong>Primary defenses</strong>:
+        <ul>
+            <li>Output encoding, escaping, and quoting.</li>
+            <li>Parameterization (use APIs that separate code from data).</li>
+            <li>Safe functions: Use <code>execl()</code> or <code>CreateProcess()</code> instead of shell.</li>
+        </ul>
+    </li>
+    <li><strong>Defense-in-depth</strong>:
+        <ul>
+            <li>Input validation (allowlists).</li>
+            <li>Attack surface reduction.</li>
+            <li>Enforce conversions (map inputs to IDs).</li>
+        </ul>
+    </li>
+</ul>
