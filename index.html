@@ -266,6 +266,7 @@
         <h2 class="mb-5 border-bottom pb-2 border-secondary d-inline-block text-white" data-aos="fade-right">Personal Knowledge System</h2>
         
         <div class="row g-4">
+            
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="card h-100">
                     <div class="card-body p-4">
@@ -553,39 +554,15 @@
 
 
     <section id="contact">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <h2 class="text-center mb-5">Get In Touch</h2>
-
-                    <div id="successAlert" class="alert alert-success d-none text-center mb-4" role="alert">
-                        <i class="bi bi-check-circle-fill me-2"></i> Message sent successfully!
-                    </div>
-
-                    <form id="contactForm" class="needs-validation" novalidate>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" name="name" placeholder="Name" required>
-                                <div class="invalid-feedback text-start">Please provide your name.</div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" name="email" placeholder="Email" required>
-                                <div class="invalid-feedback text-start">Please provide a valid email.</div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                            <div class="invalid-feedback text-start">Please provide a subject.</div>
-                        </div>
-                        <div class="mb-4">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
-                            <div class="invalid-feedback text-start">Please enter your message.</div>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-outline-light w-50" data-aos="zoom-in" data-aos-delay="200">Send Message</button>
-                        </div>
-                    </form>
-                </div>
+        <div class="container text-center">
+            <h2 class="mb-4 border-bottom pb-2 border-secondary d-inline-block" data-aos="fade-down">Connect With Me</h2>
+            <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">I'm currently open to new opportunities. Let's build something together!</p>
+            
+            <div class="d-flex justify-content-center gap-5" data-aos="zoom-in" data-aos-delay="200">
+                <a href="https://github.com/klzdr" target="_blank" class="social-icon-large"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/kiona-lei-del-rosario-6a078928b/" target="_blank" class="social-icon-large"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.upwork.com/freelancers/~01a404b3032a2fc920?mp_source=share" target="_blank" class="social-icon-large" title="Upwork"><i class="bi bi-briefcase-fill"></i></a>
+                <a href="mailto:klzdr16@gmail.com" class="social-icon-large"><i class="bi bi-envelope-fill"></i></a>
             </div>
         </div>
     </section>
@@ -766,11 +743,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // Initialize AOS (Animate on Scroll)
         AOS.init({
-            once: true, // Animations happen only once (when scrolling down)
-            offset: 100, // Trigger offset
-            duration: 800, // Animation duration in ms
+            once: true,
+            offset: 100,
+            duration: 800,
             easing: 'ease-out-cubic',
         });
 
@@ -808,26 +784,6 @@
                 });
         })
     }
-
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        const form = this;
-        const alertBox = document.getElementById('successAlert');
-
-        if (form.checkValidity()) {
-            alertBox.classList.remove('d-none');
-            form.reset();
-            form.classList.remove('was-validated');
-            setTimeout(() => {
-                alertBox.classList.add('d-none');
-            }, 3000);
-
-        } else {
-            form.classList.add('was-validated');
-        }
-    });
     </script>
 
 </body>
