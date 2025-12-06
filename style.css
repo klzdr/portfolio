@@ -1,8 +1,13 @@
 /* General Page Styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #121212; /* Standard dark background */
     color: #ffffff;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
 }
 
 h1, h2, h3, h4 {
@@ -15,7 +20,8 @@ section {
 
 /* Navbar Customization */
 .navbar {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.9); /* Slight transparency */
+    backdrop-filter: blur(10px); /* Modern blur effect */
     border-bottom: 1px solid #333;
     transition: padding 0.3s;
 }
@@ -27,10 +33,26 @@ section {
 
 .nav-link {
     color: #b0b0b0 !important; /* Light gray text */
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-/* Active state for ScrollSpy */
+/* Navbar Underline Animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
 .nav-link:hover, .nav-link.active {
     color: #ffffff !important;
     font-weight: 600;
@@ -41,32 +63,57 @@ section {
     background-color: #000000;
     padding: 120px 0;
     border-bottom: 1px solid #333;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Modern Button with Slide Fill Effect */
 .btn-outline-white {
     border: 2px solid white;
     color: white;
-    border-radius: 0; /* Makes buttons square/modern */
+    border-radius: 0;
     padding: 10px 25px;
-    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.btn-outline-white::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-outline-white:hover::before {
+    width: 100%;
 }
 
 .btn-outline-white:hover {
-    background-color: white;
     color: black;
 }
 
 /* Project Cards */
 .card {
-    background-color: #1e1e1e; /* Slightly lighter than body */
+    background-color: #1e1e1e;
     border: 1px solid #333;
     color: white;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    /* Smoother cubic-bezier transition for premium feel */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Moves up slightly on hover */
+    transform: translateY(-10px); /* Higher lift */
     border-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); /* Subtle glow */
 }
 
 .card-title {
@@ -79,30 +126,52 @@ section {
     border: 1px solid #555;
     color: #ccc;
     font-weight: 400;
-    padding: 10px 15px;
+    padding: 8px 14px;
     margin: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-/* Contact Form */
+.badge-skill:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Contact Form Input Animations */
 .form-control {
     background-color: #1e1e1e;
     border: 1px solid #333;
     color: white;
     border-radius: 0;
     padding: 15px;
+    transition: all 0.3s ease;
 }
 
 .form-control:focus {
     background-color: #252525;
     border-color: white;
     color: white;
-    box-shadow: none; /* Removes the default blue glow */
+    box-shadow: none; 
+    transform: scale(1.01); /* Subtle grow on focus */
 }
 
-/* Placeholder Styling - Added for readability */
+/* Placeholder Styling */
 .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.7); /* White with slight transparency */
-    opacity: 1; /* Firefox fix */
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+/* Social Icon Hover */
+.hover-scale {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: #fff !important;
 }
 
 /* Footer */
