@@ -1,27 +1,25 @@
-/* General Page Styles */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #121212; /* Standard dark background */
+    background-color: #121212;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Space Grotesk', sans-serif; /* Headings font */
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 section {
-    padding: 80px 0; /* consistent spacing */
+    padding: 80px 0;
 }
 
-/* Navbar Customization */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.9); /* Slight transparency */
-    backdrop-filter: blur(10px); /* Modern blur effect */
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid #333;
     transition: padding 0.3s;
 }
@@ -32,12 +30,11 @@ section {
 }
 
 .nav-link {
-    color: #b0b0b0 !important; /* Light gray text */
+    color: #b0b0b0 !important; 
     transition: all 0.3s ease;
     position: relative;
 }
 
-/* Navbar Underline Animation */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -58,7 +55,6 @@ section {
     font-weight: 600;
 }
 
-/* Hero Section */
 .hero-section {
     background-color: #000000;
     padding: 120px 0;
@@ -67,7 +63,6 @@ section {
     overflow: hidden;
 }
 
-/* Modern Button with Slide Fill Effect */
 .btn-outline-white {
     border: 2px solid white;
     color: white;
@@ -99,28 +94,25 @@ section {
     color: black;
 }
 
-/* Project Cards */
 .card {
     background-color: #1e1e1e;
     border: 1px solid #333;
     color: white;
-    /* Smoother cubic-bezier transition for premium feel */
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                 border-color 0.3s ease, 
                 box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Higher lift */
+    transform: translateY(-10px);
     border-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); /* Subtle glow */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
 }
 
 .card-title {
     font-weight: 700;
 }
 
-/* Skills Badges */
 .badge-skill {
     background-color: transparent;
     border: 1px solid #555;
@@ -139,31 +131,18 @@ section {
     transform: scale(1.05);
 }
 
-/* Contact Form Input Animations */
-.form-control {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    color: white;
-    border-radius: 0;
-    padding: 15px;
+.social-icon-large {
+    font-size: 3rem;
+    color: #ffffff;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.form-control:focus {
-    background-color: #252525;
-    border-color: white;
-    color: white;
-    box-shadow: none; 
-    transform: scale(1.01); /* Subtle grow on focus */
+.social-icon-large:hover {
+    color: #b0b0b0; 
+    transform: translateY(-10px) scale(1.1);
 }
 
-/* Placeholder Styling */
-.form-control::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    opacity: 1;
-}
-
-/* Social Icon Hover */
 .hover-scale {
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -174,7 +153,6 @@ section {
     color: #fff !important;
 }
 
-/* Footer */
 footer {
     background-color: #000000;
     padding: 40px 0;
